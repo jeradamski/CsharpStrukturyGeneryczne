@@ -5,7 +5,8 @@ namespace _2_KolekcjeGeneryczne
 {
     class Program
     {
-        static void Main(string[] args)
+        //static void Main(string[] args)
+        static void Lista()
         {
 
             /*            var liczby = new List<int>();
