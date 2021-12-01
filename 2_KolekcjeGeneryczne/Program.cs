@@ -19,6 +19,42 @@ namespace _2_KolekcjeGeneryczne
             //SortedList();
             //SortedSet();
 
+
+            //var pracownicy = new SortedDictionary<string, SortedSet<Pracownik>>(); po staremu. Przeniesione do klasy DzialyKolekcja
+            var pracownicy = new DzialyKolekcja();
+
+            //poniższe po staremu
+            /*            pracownicy.Add("Sprzedaż", new SortedSet<Pracownik>(new PracownikComparer()) { new Pracownik { Nazwisko = "Kowalski" }, //PracownikComparer to interfejs, który stworzyliśmy, aby porównać zawartość obiektów
+                                                                                    new Pracownik { Nazwisko = "Murański" },
+                                                                                    new Pracownik { Nazwisko = "Murański" },
+                                                                                    new Pracownik { Nazwisko = "Wolański" } });
+
+                        pracownicy.Add("Księgowość", new SortedSet<Pracownik>(new PracownikComparer()) { new Pracownik { Nazwisko = "Nowak" },
+                                                                             new Pracownik { Nazwisko = "Kowal" },
+                                                                             new Pracownik { Nazwisko = "Kowalczyk" },
+                                                                             new Pracownik { Nazwisko = "Kowalczyk" },});*/
+
+            pracownicy.Add("Sprzedaż", new Pracownik { Nazwisko = "Kowalski" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Murański" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Murański" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Murański" });
+
+            pracownicy.Add("Księgowość", new Pracownik { Nazwisko = "Nowak" })
+                      .Add("Księgowość", new Pracownik { Nazwisko = "Kowalczyk" })
+                      .Add("Księgowość", new Pracownik { Nazwisko = "Kowalczyk" })
+                      .Add("Księgowość", new Pracownik { Nazwisko = "Kowal" });
+
+            foreach (var dzial in pracownicy)
+            {
+                Console.WriteLine("Dział: " + dzial.Key);
+                foreach (var pracownik in dzial.Value)
+                {
+                    Console.WriteLine("\t" + pracownik.Nazwisko);
+                }
+                Console.WriteLine();
+            }
+
+
         }
 
         private static void SortedSet()
